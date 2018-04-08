@@ -9,10 +9,12 @@ if (!isset($_SERVER['REQUEST_URI'])) {
 } elseif (substr($_SERVER['REQUEST_URI'], -1) == '/') {
     $_SERVER['REQUEST_URI'] .= 'index';
 } elseif (is_dir('pages' . $_SERVER['REQUEST_URI'])) {
-    $_SERVER['REQUEST_URI'] .= 'index';
+    $_SERVER['REQUEST_URI'] .= '/index';
 }
+
 $page = 'pages' . $_SERVER['REQUEST_URI'] . '.php';
 
+debug($page);
 if (file_exists($page)) {
     ob_start();
     include($page);

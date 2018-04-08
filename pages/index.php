@@ -1,8 +1,8 @@
 <?php
 
 // Set page properties
-title('Index');
-stylesheets('index');
+title($config['host_name']);
+stylesheets('style');
 javascripts('index');
 
 ?>
